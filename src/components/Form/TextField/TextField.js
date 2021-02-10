@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, Label, Hint } from '../FieldParts';
 import { Input } from './styles';

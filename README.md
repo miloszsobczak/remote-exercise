@@ -119,3 +119,19 @@ This script runs automatically after `npm install`.
 ## Implementation details
 
 This section is for you to fill in with any decisions you made that may be relevant. You can also change this README to fit your needs.
+
+### Branching model
+
+As this is only for training purposes I've decided to put everything directly to one feature-branch called __feature/miloszsobczak-training__, but keeping commits in clean, standarized way using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) methodology.
+
+### Static analysis
+
+In order to provide consistant experience for developers we should establish common style of javascript is being written.
+To make it in resonable time I've choosen ready-to-go presets:
+- `eslint:recommended`,
+- `plugin:react/recommended`
+- `plugin:jest/recommended`
+
+### Code-quaility guard
+
+[Hysky](https://github.com/typicode/husky/tree/master) is a pretty known tool for making sure that our code meets specific requirements before publish code to Remote 👋🏻.

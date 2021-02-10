@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 export const Field = styled.div`
@@ -39,3 +41,10 @@ export function Hint({ errorMsg, helper }) {
     </Text>
   );
 }
+
+Hint.propTypes = {
+  /** Field description message */
+  helper: PropTypes.string,
+  /** Field error message */
+  errorMsg: PropTypes.string,
+};

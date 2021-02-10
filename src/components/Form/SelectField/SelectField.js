@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, Label, Hint } from '../FieldParts';
 import { Select } from './styles';
@@ -17,6 +18,11 @@ export default function SelectField({ children, label, helper, errorMsg, ...prop
 }
 
 SelectField.propTypes = {
+    /** Field label */
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+]),
   /** Field label */
   label: PropTypes.string.isRequired,
   /** Field description message */

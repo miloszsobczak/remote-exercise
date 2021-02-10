@@ -1,16 +1,17 @@
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Button from "components/Button";
-import LoadingLogo from "components/LoadingLogo";
-import Text, { TextLight } from "components/Text";
-import { Card, CardHeader, CardBody, CardFooter } from "components/Card";
-import { Table, TableThCell, TableCell, TableRow } from "components/Table";
-import TextField from "components/Form/TextField";
-import SelectField from "components/Form/SelectField";
+import Button from 'components/Button';
+import LoadingLogo from 'components/LoadingLogo';
+import Text, { TextLight } from 'components/Text';
+import { Card, CardHeader, CardBody, CardFooter } from 'components/Card';
+import { Table, TableThCell, TableCell, TableRow } from 'components/Table';
+import TextField from 'components/Form/TextField';
+import SelectField from 'components/Form/SelectField';
 
-import { ReactComponent as IconSearch } from "theme/icons/search.svg";
-import { ReactComponent as IconUser } from "theme/icons/user.svg";
-import { ReactComponent as IconTimesCircle } from "theme/icons/times-circle.svg";
+import { ReactComponent as IconSearch } from 'theme/icons/search.svg';
+import { ReactComponent as IconUser } from 'theme/icons/user.svg';
+import { ReactComponent as IconTimesCircle } from 'theme/icons/times-circle.svg';
 
 const Container = styled.main`
   margin: 40px auto;
@@ -39,23 +40,23 @@ export default function Playground() {
         Playground
       </Text>
       <TextLight as="p">
-        These are some of the base components already built for you. You can{" "}
+        These are some of the base components already built for you. You can{' '}
         <Text size="bodyBold">use and modify</Text> them as you need!
       </TextLight>
 
-      <TitleComponent>{`<Text>`}</TitleComponent>
+      <TitleComponent>{'<Text>'}</TitleComponent>
       <Demo>
         <Text as="p" size="body">
           Everyday is a <Text size="bodyBold">new opportunity</Text> to grow.
         </Text>
       </Demo>
 
-      <TitleComponent>{`<Button>`}</TitleComponent>
+      <TitleComponent>{'<Button>'}</TitleComponent>
       <Demo>
         <Button>Continue</Button>
       </Demo>
 
-      <TitleComponent>{`<Card>`}</TitleComponent>
+      <TitleComponent>{'<Card>'}</TitleComponent>
       <Demo>
         <Card>
           <CardHeader>Start with the CardHeader</CardHeader>
@@ -64,7 +65,7 @@ export default function Playground() {
         </Card>
       </Demo>
 
-      <TitleComponent>{`<Table>`}</TitleComponent>
+      <TitleComponent>{'<Table>'}</TitleComponent>
       <Demo>
         <Card>
           <CardBody>
@@ -98,7 +99,7 @@ export default function Playground() {
         </Card>
       </Demo>
 
-      <TitleComponent>{`<TextField>`}</TitleComponent>
+      <TitleComponent>{'<TextField>'}</TitleComponent>
       <Demo>
         <TextField
           label="Name"
@@ -116,7 +117,7 @@ export default function Playground() {
         />
       </Demo>
 
-      <TitleComponent>{`<SelectField>`}</TitleComponent>
+      <TitleComponent>{'<SelectField>'}</TitleComponent>
       <Demo>
         <SelectField label="Food" defaultValue="" helper="Your favorite food">
           <option value="" hidden>
@@ -129,7 +130,7 @@ export default function Playground() {
         </SelectField>
       </Demo>
 
-      <TitleComponent>{`<LoadingLogo>`}</TitleComponent>
+      <TitleComponent>{'<LoadingLogo>'}</TitleComponent>
       <Demo>
         <LoadingLogo />
       </Demo>

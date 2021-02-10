@@ -1,3 +1,4 @@
+import React from 'react';
 import Text, { TextLight } from 'components/Text';
 
 import { Wrapper, Inner, ProfileLink, ProfileAvatar, ProfileInfo } from './styles';
