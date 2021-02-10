@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from 'components/Button';
-import LoadingLogo from 'components/LoadingLogo';
-import Text, { TextLight } from 'components/Text';
-import { Card, CardHeader, CardBody, CardFooter } from 'components/Card';
-import { Table, TableThCell, TableCell, TableRow } from 'components/Table';
-import TextField from 'components/Form/TextField';
-import SelectField from 'components/Form/SelectField';
+import Button from './Button';
+import LoadingLogo from './LoadingLogo';
+import Text, { TextLight } from './Text';
+import { Card, CardHeader, CardBody, CardFooter } from './Card';
+import { Table, TableThCell, TableCell, TableRow } from './Table';
+import TextField from './Form/TextField';
+import SelectField from './Form/SelectField';
 
 import { ReactComponent as IconSearch } from 'theme/icons/search.svg';
 import { ReactComponent as IconUser } from 'theme/icons/user.svg';

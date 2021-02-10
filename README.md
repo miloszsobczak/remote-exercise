@@ -122,16 +122,21 @@ This section is for you to fill in with any decisions you made that may be relev
 
 ### Branching model
 
-As this is only for training purposes I've decided to put everything directly to one feature-branch called __feature/miloszsobczak-training__, but keeping commits in clean, standarized way using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) methodology.
+As this is only for training purposes I've decided to put everything directly to one feature-branch called __feature/miloszsobczak-training__, but keeping commits in clean, standardized way using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) methodology.
 
 ### Static analysis
 
-In order to provide consistant experience for developers we should establish common style of javascript is being written.
-To make it in resonable time I've choosen ready-to-go presets:
+In order to provide consistent experience for developers we should establish common style of javascript is being written.
+To make it in reasonable time I've chosen ready-to-go presets:
 - `eslint:recommended`,
 - `plugin:react/recommended`
 - `plugin:jest/recommended`
 
-### Code-quaility guard
+### Code-quality guard
 
-[Hysky](https://github.com/typicode/husky/tree/master) is a pretty known tool for making sure that our code meets specific requirements before publish code to Remote 👋🏻.
+[Husky](https://github.com/typicode/husky/tree/master) is a pretty known tool for making sure that our code meets specific requirements before publish code to Remote 👋🏻.
+
+### Routing
+
+Based on design - app seems to be a multi-page.
+The simplest solution is to use [React Router](https://reactrouter.com/) that declaratively performing navigation.
