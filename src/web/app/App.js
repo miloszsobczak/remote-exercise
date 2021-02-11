@@ -5,13 +5,13 @@ import {
 } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
-import { theme, GlobalStyles } from './theme';
+import { theme, GlobalStyles } from '../../theme';
 
-import Header from './components/Header';
+import Header from '../../components/Header';
 
-import HomePage from './web/pages/Home/HomePage';
-import EmployeePage from './web/pages/Employee/EmployeePage';
-import PlaygroundPage from './web/pages/Playground/PlaygroundPage';
+import HomePage from '../pages/Home/HomePage';
+import EmployeePage from '../pages/Employee/EmployeePage';
+import PlaygroundPage from '../pages/Playground/PlaygroundPage';
 
 export default function App() {
   return (
