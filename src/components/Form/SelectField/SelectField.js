@@ -18,11 +18,11 @@ export default function SelectField({ children, label, helper, errorMsg, ...prop
 }
 
 SelectField.propTypes = {
-    /** Field label */
+  /** Field label */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
-]),
+  ]),
   /** Field label */
   label: PropTypes.string.isRequired,
   /** Field description message */

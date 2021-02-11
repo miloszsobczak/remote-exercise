@@ -13,11 +13,7 @@ import { ReactComponent as IconSearch } from 'theme/icons/search.svg';
 import { ReactComponent as IconUser } from 'theme/icons/user.svg';
 import { ReactComponent as IconTimesCircle } from 'theme/icons/times-circle.svg';
 
-const Container = styled.main`
-  margin: 40px auto;
-  width: 100%;
-  max-width: var(--layout-width);
-`;
+import { Container } from 'components/Container';
 
 const TitleComponent = styled.h2`
   font-size: 1.2rem;

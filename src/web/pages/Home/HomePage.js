@@ -1,16 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import EmployeeList from 'web/app/components/Employee/EmployeeList/EmployeeList';
 
-const Container = styled.main`
-  margin: 40px auto;
-  width: 100%;
-  max-width: var(--layout-width);
-`;
+import { Container } from 'components/Container';
 
 export default function HomePage () {
-    return (
-        <Container data-testid="home-page">
-            homepage
-        </Container>
-    )
+  return (
+    <Container data-testid="home-page">
+      <EmployeeList />
+    </Container>
+  )
 }

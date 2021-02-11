@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-export const ButtonStyled = styled.button`
+export const getStyles = component => styled(component)`
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   font-size: 1rem;
   font-weight: 500;
@@ -14,4 +15,11 @@ export const ButtonStyled = styled.button`
 
   background: var(--colors-irisBlue);
   color: var(--colors-blank);
+  text-decoration: none;
+
+  & svg {
+    fill: var(--colors-blank);
+    height: 1.2em;
+    margin-right: 0.3em;
+  }
 `;

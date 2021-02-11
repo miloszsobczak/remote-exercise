@@ -9,13 +9,13 @@ const middlewares = [sagaMiddleware]
 const reducers = AppReducer.combine()
 
 class AppStore {
-    static configure () {
-        const store = createStore(reducers, applyMiddleware(...middlewares))
+  static configure () {
+    const store = createStore(reducers, applyMiddleware(...middlewares))
 
-        sagaMiddleware.run(AppSagas)
+    sagaMiddleware.run(AppSagas)
 
-        return store
-    }
+    return store
+  }
 }
 
 export default AppStore

@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import { ButtonStyled } from './styles';
+import { getStyles } from './styles';
+
+const ButtonStyled = getStyles(styled.button``)
 
 export default function Button({ children, ...props }) {
   return (
@@ -13,5 +16,5 @@ export default function Button({ children, ...props }) {
 
 Button.propTypes = {
   /** Button text content */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
