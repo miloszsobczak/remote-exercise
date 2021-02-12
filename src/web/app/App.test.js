@@ -7,9 +7,12 @@ import {
 import configureMockStore from 'redux-mock-store';
 
 import App from './App';
+import { EmployeeListInitialState } from 'web/app/components/Employee/EmployeeList/redux/EmployeeList.reducers'
 
 const mockStore = configureMockStore({})
-const store = mockStore({})
+const store = mockStore({
+  employeeListReducer: EmployeeListInitialState
+})
 
 describe('App', () => {
   describe('should handle routing', () => {
@@ -21,9 +24,9 @@ describe('App', () => {
           </MemoryRouter>
         </Provider>
       );
-      const title = screen.getByTestId('home-page');
+      const page = screen.getByTestId('home-page');
   
-      expect(title).toBeInTheDocument();
+      expect(page).toBeInTheDocument();
     });
   
     it('so when navigating to /playground should render homepage', () => {
@@ -34,9 +37,9 @@ describe('App', () => {
           </MemoryRouter>
         </Provider>
       );
-      const title = screen.getByTestId('playground-page');
+      const page = screen.getByTestId('playground-page');
   
-      expect(title).toBeInTheDocument();
+      expect(page).toBeInTheDocument();
     });
 
     describe('so when navigating to /employee', () => {
@@ -48,9 +51,9 @@ describe('App', () => {
             </MemoryRouter>
           </Provider>
         );
-        const title = screen.getByTestId('employee-edit-page');
+        const page = screen.getByTestId('employee-edit-page');
     
-        expect(title).toBeInTheDocument();
+        expect(page).toBeInTheDocument();
       });
   
       it('/add should render employeeAddPage', () => {
@@ -61,9 +64,9 @@ describe('App', () => {
             </MemoryRouter>
           </Provider>
         );
-        const title = screen.getByTestId('employee-add-page');
+        const page = screen.getByTestId('employee-add-page');
     
-        expect(title).toBeInTheDocument();
+        expect(page).toBeInTheDocument();
       });
     });
   });

@@ -140,3 +140,15 @@ To make it in reasonable time I've chosen ready-to-go presets:
 
 Based on design - app seems to be a multi-page.
 The simplest solution is to use [React Router](https://reactrouter.com/) that declaratively performing navigation.
+
+#### API proxying
+
+API can look on production/pre stage completely differently, but for development purposes local proxy makes sense.
+It simplifies network architecture.
+
+### Redux
+
+Redux-saga can be considered as a bazooka to kill the fly, but still I do really like this way of keeping this organized in async flows.
+For should we could take under consideration redux-thunk or custom implementation if necessary.
+
+

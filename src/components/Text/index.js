@@ -1,1 +1,1 @@
-export { default, TextLight } from './Text';
+export { default, TextLight, TextCapitalized } from './Text';

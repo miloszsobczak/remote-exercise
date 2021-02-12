@@ -9,3 +9,7 @@ export default Text;
 export const TextLight = styled(Text)`
   color: var(--colors-lynch);
 `;
+
+export const TextCapitalized = styled(Text)`
+  text-transform: capitalize;
+`

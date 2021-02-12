@@ -13,6 +13,8 @@ const GlobalStyles = createGlobalStyle`
 
     --font-primary: "Inter", sans-serif;
     --layout-width: 1100px;
+    --spacer: 32px;
+    --radius: 10px;
   }
 
   html {
@@ -21,6 +23,11 @@ const GlobalStyles = createGlobalStyle`
     font-family: var(--font-primary);
     ${({ theme }) => theme.typography.body};
     box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    min-height: 100%;
   }
 
   *,
@@ -32,6 +39,12 @@ const GlobalStyles = createGlobalStyle`
   body {
     color: var(--colors-darkBlue);
     background-color: var(--colors-linkWater);
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 `;
 
