@@ -95,7 +95,7 @@ function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
               <tbody>
                 {data.map(employee => {
                   return (
-                    <TableRow key={employee.id}>
+                    <TableRow key={employee.id} data-testid="table__employee-list__row">
                       <TableCell>
                         <Text size="bodySmallBold">{employee.name}</Text>
                       </TableCell>
@@ -119,9 +119,9 @@ function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
               </tbody>
             )}
           </EmployeeTable>
-          {loading && <EmployeeLoadingLogo />}
+          {loading && <EmployeeLoadingLogo data-testid="table__employee-list__loading-logo" />}
           {showError && (
-            <Alert type="error">
+            <Alert type="error"  data-testid="table__employee-list__alert-error">
               <IconTimesCircle /> 
               <Text>
                 Sorry, we are unable to fetch the data.
