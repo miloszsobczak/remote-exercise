@@ -2,27 +2,46 @@ import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import debounce from 'lodash.debounce';
 
 import { ReactComponent as IconUser } from 'theme/icons/user.svg';
 import { ReactComponent as IconTimesCircle } from 'theme/icons/times-circle.svg';
 
 import Text, { TextCapitalized } from 'components/Text';
 import Currency from 'components/Currency';
-import { CardBody } from 'components/Card';
 import { Grid, Column } from 'components/Grid';
-import { Table, TableRow, TableThCell, TableCell } from 'components/Table';
+import { TableRow, TableThCell, TableCell } from 'components/Table';
 import { Alert } from 'components/Alert'
 
 import { employeePropType } from '../proptypes/EmployeePropType'
 import { fetchEmployeeListRequest } from 'web/app/components/Employee/EmployeeList/redux/EmployeeList.actions'
 
-import { EmployeeCard, EmployeeLoadingLogo, TableCellLink, EmployeesNumber, LinkButton } from './styles'
+import {
+  EmployeeCard, EmployeeCardBody, EmployeeLoadingLogo,
+  TableCellLink, EmployeesNumber, LinkButton, EmployeeTable
+} from './styles'
+import SearchField from 'components/Form/SearchField';
+
+const TIME_TO_DEBOUNCE = 200;
 
 function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
   const [showError, setShowError] = useState(false);
   const [showData, setShowData] = useState(false);
   const [dataLength, setDataLength] = useState(0);
-  const [query] = useState(null);
+  const [isSearching, setIsSearching] = useState(false);
+  const [query, setQuery] = useState(null);
+
+  const debouceOnSearch = debounce(
+    ({ target: { value }}) => {
+      setQuery(value)
+      setIsSearching(false);
+    },
+    TIME_TO_DEBOUNCE
+  )
+  const onSearch = e => {
+    debouceOnSearch(e);
+    setIsSearching(true);
+  }
 
   useEffect(() => {
     fetchEmployeeListRequest(query)
@@ -60,8 +79,9 @@ function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
         </Column>
       </Grid>
       <EmployeeCard>
-        <CardBody>
-          <Table data-testid="table__employee-list">
+        <EmployeeCardBody>
+          <SearchField placeholder="Search for employees..." onChange={onSearch} />
+          <EmployeeTable data-testid="table__employee-list" disabled={isSearching}>
             <thead>
               <TableRow>
                 <TableThCell>Name</TableThCell>
@@ -98,7 +118,7 @@ function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
                 })}
               </tbody>
             )}
-          </Table>
+          </EmployeeTable>
           {loading && <EmployeeLoadingLogo />}
           {showError && (
             <Alert type="error">
@@ -108,7 +128,7 @@ function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
               </Text>
             </Alert>
           )}
-        </CardBody>
+        </EmployeeCardBody>
       </EmployeeCard>
     </>
   )
