@@ -1,47 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import { ReactComponent as IconUser } from 'theme/icons/user.svg';
 import { ReactComponent as IconTimesCircle } from 'theme/icons/times-circle.svg';
 
-import typography from 'theme/typography'
 import Text, { TextCapitalized } from 'components/Text';
 import Currency from 'components/Currency';
-import { getStyles as getButtonStyles } from 'components/Button/styles';
-import { Card, CardBody } from 'components/Card';
+import { CardBody } from 'components/Card';
 import { Grid, Column } from 'components/Grid';
 import { Table, TableRow, TableThCell, TableCell } from 'components/Table';
 import { Alert } from 'components/Alert'
-import LoadingLogo from 'components/LoadingLogo';
 
 import { employeePropType } from '../proptypes/EmployeePropType'
 import { fetchEmployeeListRequest } from 'web/app/components/Employee/EmployeeList/redux/EmployeeList.actions'
 
-const EmployeeCard = styled(Card)`
-  margin-top: var(--spacer);
-  flex: 2;
-`
-const EmployeeLoadingLogo = styled(LoadingLogo)`
-  margin: 80px auto 0;
-  width: 46px;
-`
-const TableCellLink = styled(Link)`
-  ${() => typography.bodyMedium}
-  color: var(--colors-irisBlue);
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`
-const LinkButton = getButtonStyles(Link)
+import { EmployeeCard, EmployeeLoadingLogo, TableCellLink, EmployeesNumber, LinkButton } from './styles'
 
 function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
   const [showError, setShowError] = useState(false);
   const [showData, setShowData] = useState(false);
+  const [dataLength, setDataLength] = useState(0);
   const [query] = useState(null);
 
   useEffect(() => {
@@ -49,8 +29,12 @@ function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
   }, [query])
 
   useEffect(() => {
-    setShowData(!loading && (Array.isArray(data) && data.length > 0))
-  }, [data, loading])
+    setDataLength(data ? data.length : 0)
+  }, [data])
+
+  useEffect(() => {
+    setShowData(!loading && (Array.isArray(data) && dataLength > 0))
+  }, [data, loading, dataLength])
 
   useEffect(() => {
     setShowError(!data && !loading && error)
@@ -62,6 +46,11 @@ function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
         <Column>
           <Text size="h2">
             People
+            {showData && (
+              <EmployeesNumber as="small" size="bodyCaption">
+                {dataLength} {`employee${dataLength > 1 ? 's' :''}`}
+              </EmployeesNumber>
+            )}
           </Text>
         </Column>
         <Column column={2} justify="flex-end">
