@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const API_METHODS = {
   GET: 'GET',
-  POST: 'PUT',
+  POST: 'POST',
   PATCH: 'PATCH',
   PUT: 'PUT',
   DELETE: 'DELETE'
