@@ -8,7 +8,7 @@ import EmployeeForm from '../components/EmployeeForm';
 
 import { addEmployeeRequest } from './redux/EmployeeAdd.actions'
 
-function EmployeeAdd({
+export function EmployeeAdd({
   addLoading,
   addError, 
   addEmployeeRequest,
@@ -18,13 +18,18 @@ function EmployeeAdd({
     <>
       {/* there are multiple ways how to redirect user - I've just used pretty simple one */}
       {redirect && <Redirect to={redirect} />}
-      <EmployeeForm 
+      <EmployeeForm
         action={addEmployeeRequest}
         loading={addLoading}
         error={addError}
       />
     </>
   )
+}
+
+EmployeeAdd.defaultTypes = {
+  addLoading: false,
+  addError: null
 }
 
 EmployeeAdd.propTypes = {
