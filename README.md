@@ -6,7 +6,7 @@ If you're reading this, it means you're now at the coding exercise step of the e
 
 In this exercise you're asked to implement some features in an existing React app, using whatever extra tools you want.
 
-If you have any questions, don't hesitate to create an issue in this repo or reach out directly to marcelo@remote.com.
+If you have any questions, don't hesitate to create an issue in this repo or reach out directly to <...>.
 
 ## Expectations  
 * It should be production-ready code - the code will show us how you ship things to production and be a mirror of your craft.  
@@ -44,7 +44,7 @@ For further details, follow the design specs in the Figma file shared with you b
 ## ✅ When you're done
 
 - Complete the "Implementation Details" section at the bottom of this README.
-- Open a Pull Request in this repo and send the link to marcelo@remote.com.
+- Open a Pull Request in this repo and send the link to <...>.
 - You can also send some feedback about this exercise. Was it too short/big? Boring? Let us know!
 
 ---
@@ -156,3 +156,23 @@ For should we could take under consideration redux-thunk or custom implementatio
 [React Hook Form](https://react-hook-form.com/) is a great library that simplifies form handling using hooks.
 For later, production grade experience, we could consider some FormBuilder on top of that lib.
 
+### Testing
+
+I have chosen React Testing Library as I wanted to focus on UI and user actions that are meant to be tested.
+To have a high percentage of confidence whether our app works properly, test coverage should be significant higher and should cover sagas and redux.
+
+For interview I've picked up some random tests including containers, components, routing.
+
+## To dos
+- Format Currency and properly match the designs (Fow Now I have just used Number.Intl - but it seems like we would need more complex method)
+- Standardize how the components are written considering their structure and name quality
+- Expose CSS variables and common configuration to be more generic
+- Cover tests with sagas and redux flow to make sure that whole process works correctly
+- There is no responsiveness implemented, so obviously we should make it working
+- EmployeeForm could be more context-agnostic, but it depends on next steps
+- Make form validation more complex, allowing to specify different rules
+- Add Form Validation for RadioButtons (there were no designs for that state, but I am pretty sure we should cover that and notify the user)
+- Use more performance driven practices like memoization, bundling etc
+- Besides React there are multiple ways how to make app more performing like preloading/prefetching/cssDOM optimization
+- More Accessibility elements/attributes should be used here
+- and more ;)
