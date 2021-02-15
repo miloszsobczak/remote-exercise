@@ -24,7 +24,7 @@ SelectField.propTypes = {
     PropTypes.node
   ]),
   /** Field label */
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   /** Field description message */
   helper: PropTypes.string,
   /** Field error message */

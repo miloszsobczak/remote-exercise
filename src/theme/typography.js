@@ -24,6 +24,7 @@ const typography = {
   bodyBold: getTextStyles(600, '16px', 1.5),
 
   bodySmall: getTextStyles(400, '14px', 1.29),
+  bodyXSmall: getTextStyles(400, '12px', 1.17),
   bodySmallBold: getTextStyles(600, '14px', 1.29),
   bodyCaption: getTextStyles(400, '13px', 1.23),
 };

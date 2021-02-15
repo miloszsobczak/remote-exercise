@@ -8,10 +8,12 @@ import configureMockStore from 'redux-mock-store';
 
 import App from './App';
 import { EmployeeListInitialState } from 'web/app/components/Employee/EmployeeList/redux/EmployeeList.reducers'
+import { EmployeeEditInitialState } from 'web/app/components/Employee/EmployeeEdit/redux/EmployeeEdit.reducers'
 
 const mockStore = configureMockStore({})
 const store = mockStore({
-  employeeListReducer: EmployeeListInitialState
+  employeeListReducer: EmployeeListInitialState,
+  employeeEditReducer: EmployeeEditInitialState
 })
 
 describe('App', () => {

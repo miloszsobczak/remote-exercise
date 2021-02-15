@@ -22,4 +22,6 @@ export const CardFooter = styled.div`
   background-color: #f9faff;
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
+  display: ${({ display }) => display || 'block'};
+  justify-content: ${({ justify }) => justify || 'flex-start'};
 `;

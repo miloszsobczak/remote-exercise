@@ -7,7 +7,6 @@ import debounce from 'lodash.debounce';
 import { ReactComponent as IconUser } from 'theme/icons/user.svg';
 import { ReactComponent as IconTimesCircle } from 'theme/icons/times-circle.svg';
 
-import { LinkButton } from 'components/Button';
 import Text, { TextCapitalized } from 'components/Text';
 import Currency from 'components/Currency';
 import { Grid, Column } from 'components/Grid';
@@ -19,7 +18,7 @@ import { fetchEmployeeListRequest } from 'web/app/components/Employee/EmployeeLi
 
 import {
   EmployeeCard, EmployeeCardBody, EmployeeLoadingLogo,
-  TableCellLink, EmployeesNumber, EmployeeTable
+  TableCellLink, EmployeesNumber, LinkButton, EmployeeTable
 } from './styles'
 import SearchField from 'components/Form/SearchField';
 

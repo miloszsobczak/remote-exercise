@@ -50,6 +50,10 @@ export default function Playground() {
       <TitleComponent>{'<Button>'}</TitleComponent>
       <Demo>
         <Button>Continue</Button>
+        <Button secondary>Continue</Button>
+        <hr />
+        <Button long>Continue</Button>
+        <Button secondary long>Continue</Button>
       </Demo>
 
       <TitleComponent>{'<Card>'}</TitleComponent>
