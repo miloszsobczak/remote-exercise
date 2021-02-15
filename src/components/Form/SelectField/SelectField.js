@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { Field, Label, Hint } from '../FieldParts';
 import { Select } from './styles';
 
-export default function SelectField({ children, label, helper, errorMsg, ...props }) {
+export default function SelectField({ children, label, helper, errorMsg, formRef, ...props }) {
   const invalidAttr = errorMsg ? { 'aria-invalid': true } : {};
 
   return (
-    <Field as="label">
+    <Field as="label" error={errorMsg}>
       <Label>{label}</Label>
-      <Select {...props} {...invalidAttr}>
+      <Select ref={formRef} {...props} {...invalidAttr}>
         {children}
       </Select>
       <Hint errorMsg={errorMsg} helper={helper} />
@@ -29,4 +29,6 @@ SelectField.propTypes = {
   helper: PropTypes.string,
   /** Field error message */
   errorMsg: PropTypes.string,
+  /** Ref for react-hook-form library */
+  formRef: PropTypes.func
 };

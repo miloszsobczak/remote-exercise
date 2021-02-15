@@ -39,7 +39,7 @@ export function* fetchEmployee({ id }) {
 
 export function* editEmployee({ id, employee }) {
   try {
-    const result = yield call(callAndParseApiResponseEdit, getEmployeeUrl(id, employee));
+    const result = yield call(callAndParseApiResponseEdit, getEmployeeUrl(id), employee);
     
     yield put(editEmployeeSuccess(result, id, employee));
     return result

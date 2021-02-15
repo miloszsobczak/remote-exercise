@@ -10,4 +10,8 @@ export const SalaryFieldColumn = styled(Column)`
   & > label {
     width: 100%;
   }
+
+  & .error-message {
+    ${({ column }) =>  column == 2 && 'display: none;'}
+  }
 `

@@ -31,7 +31,7 @@ function Currency({ children, currency }) {
 }
 
 Currency.propTypes = {
-  children: PropTypes.number,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   currency: PropTypes.string
 }
 

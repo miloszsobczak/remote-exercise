@@ -14,7 +14,8 @@ export const EmployeeEditInitialState = {
   fetchError: null,
   editError: null,
   fetchLoading: false,
-  editLoading: false
+  editLoading: false,
+  redirect: null
 }
 
 const employeeEditReducer = (state = EmployeeEditInitialState, {
@@ -55,10 +56,14 @@ const employeeEditReducer = (state = EmployeeEditInitialState, {
       ...state,
       editLoading: false,
       editError: null,
-      editData
+      editData,
+      redirect: '/'
     }
   default:
-    return state
+    return {
+      ...state,
+      redirect: null
+    }
   }
 }
 

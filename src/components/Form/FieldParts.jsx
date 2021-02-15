@@ -7,6 +7,7 @@ export const Field = styled.div`
   font-size: 0.8125rem;
 
   --labelColor: var(--colors-bayoux);
+  --borderBottomColor: var(--colors-pigeon);
 
   &:focus-within {
     --labelColor: var(--colors-irisBlue);
@@ -14,6 +15,15 @@ export const Field = styled.div`
 
   & + & {
     margin-top: 32px;
+  }
+
+  & input,
+  & select {
+    &:focus-within,
+    &:focus,
+    & {
+      ${({ error }) => error && 'border-bottom-color: var(--colors-redPink);'}
+    }
   }
 `;
 
@@ -35,7 +45,7 @@ const ErrorMsg = styled.span`
 export function Hint({ errorMsg, helper }) {
   return (
     <Text>
-      {errorMsg && <ErrorMsg>{errorMsg}</ErrorMsg>}
+      {errorMsg && <ErrorMsg className="error-message">{errorMsg}</ErrorMsg>}
       {errorMsg && helper && ' - '}
       {helper}
     </Text>

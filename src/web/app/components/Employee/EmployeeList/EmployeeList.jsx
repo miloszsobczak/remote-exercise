@@ -103,8 +103,7 @@ function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
                       </TableCell>
                       <TableCell>
                         <Text>
-                          {employee.jobTitle}
-                          (<TextCapitalized>{employee.employment}</TextCapitalized>)
+                          {employee.jobTitle} (<TextCapitalized>{employee.employment}</TextCapitalized>)
                         </Text>
                       </TableCell>
                       <TableCell>

@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import LoadingLogo from 'components/LoadingLogo';
-
 import { employeePropType } from '../proptypes/EmployeePropType'
-import EmployeeForm from '../components/EmployeeForm/EmployeeForm';
+import EmployeeForm, { EmployeeFormPreLoader } from '../components/EmployeeForm';
 
 import { fetchEmployeeRequest, editEmployeeRequest } from './redux/EmployeeEdit.actions'
 
@@ -18,7 +17,9 @@ function EmployeeEdit({
   editLoading,
   editError, 
   editData,
-  fetchEmployeeRequest, editEmployeeRequest
+  fetchEmployeeRequest,
+  editEmployeeRequest,
+  redirect
 }) {
   useEffect(() => {
     fetchEmployeeRequest(id)
@@ -26,15 +27,17 @@ function EmployeeEdit({
 
   return (
     <>
-      {!fetchLoading && !fetchError && (
+      {/* there are multiple ways how to redirect user - I've just used pretty simple one */}
+      {redirect && <Redirect to={redirect} />}
+      {!fetchLoading && (
         <EmployeeForm 
           action={editEmployeeRequest}
           employee={editData || fetchData}
           loading={editLoading}
-          error={editError}
+          error={editError || fetchError}
         />
       )}
-      {fetchLoading && <LoadingLogo />}
+      {fetchLoading && <EmployeeFormPreLoader />}
     </>
   )
 }
@@ -48,7 +51,8 @@ EmployeeEdit.propTypes = {
   editLoading: PropTypes.bool,
   editError: PropTypes.string,
   fetchEmployeeRequest: PropTypes.func,
-  editEmployeeRequest: PropTypes.func
+  editEmployeeRequest: PropTypes.func,
+  redirect: PropTypes.string
 }
 
 export default connect(
@@ -59,7 +63,8 @@ export default connect(
       fetchData,
       editLoading,
       editError, 
-      editData
+      editData,
+      redirect
     }}) => (
     {
       fetchLoading,
@@ -67,7 +72,8 @@ export default connect(
       fetchData,
       editLoading,
       editError,
-      editData 
+      editData,
+      redirect
     }),
   { fetchEmployeeRequest, editEmployeeRequest }
 )(EmployeeEdit);

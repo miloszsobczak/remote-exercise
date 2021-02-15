@@ -148,7 +148,11 @@ It simplifies network architecture.
 
 ### Redux
 
-Redux-saga can be considered as a bazooka to kill the fly, but still I do really like this way of keeping this organized in async flows.
+Redux-saga can be considered as a bazooka to kill the fly, but still I do really like that way of keeping things organized in async flows.
 For should we could take under consideration redux-thunk or custom implementation if necessary.
 
+### Form handling
+
+[React Hook Form](https://react-hook-form.com/) is a great library that simplifies form handling using hooks.
+For later, production grade experience, we could consider some FormBuilder on top of that lib.
 
