@@ -25,7 +25,7 @@ import SearchField from 'components/Form/SearchField';
 
 const TIME_TO_DEBOUNCE = 200;
 
-function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
+export function EmployeeList({ data, error, loading, fetchEmployeeListRequest }) {
   const [showError, setShowError] = useState(false);
   const [showData, setShowData] = useState(false);
   const [dataLength, setDataLength] = useState(0);
